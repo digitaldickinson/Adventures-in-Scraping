@@ -15,13 +15,11 @@ When you hit enter the table should populate with dates. The key bit here is
 
 ```
 //a[@class='pdf']
-
 ``` 
 This is xpath a way of navigating through the code to find the right part of the page. In this case we are looking for any link (a) with the class pdf. For example…
 
 ```
 <a href="http://admin.easywebsites.co.uk/inc/whittinghamparishcouncil.org.uk/downloads/Mins Jan 17.pdf" target="_blank" title="Jan 2017" class="pdf">Jan 2017</a>
-
 ```
  
 The formula pulls out the text of the page element selected. In this case that’s the text ‘Jan 2017’ between the <a..> </a> tags
@@ -30,7 +28,6 @@ In B2 add the following formula. Note: don’t cut-and-paste this the formatting
  
  ```
 =IMPORTXML("http://www.whittinghamparishcouncil.org.uk/agenda-minutes.php", "//a[@class='pdf']/@href")
-
 ```
 
 This time we’ve added a little more direction for the formula. We’ve said find the links with the class pdf and then give is the contents of the href attribute. That’s the bit that contains the actual URL.
